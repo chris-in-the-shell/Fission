@@ -12,8 +12,31 @@ The intent is to transfer and scale this work into formal Arkenstone Labs workfl
 ## Current Scope
 
 - Detailed product planning (`PRODUCT_PLAN.md`)
-- Early implementation design for a Teleoplexy-oriented prediction market protocol
+- Core implementation for proposal ingestion, deliberation orchestration, market listing validation, oracle aggregation, and trigger policy DSL
 - Integration blueprint for prior governance tooling patterns
+- dApp scaffold with contracts and web client (`contracts`, `apps/web`)
+
+## Workspace Layout
+
+- `src`: Core TypeScript modules and validators
+- `tests`: Core module test suite (Vitest)
+- `contracts`: Hardhat workspace for on-chain market contracts
+- `apps/web`: Web dApp scaffold (Vite + React + wagmi)
+
+## Development Quickstart
+
+```bash
+npm install
+npm test
+npm run build:core
+npm run build:contracts
+npm run build:web
+```
+
+```bash
+# Run web client
+npm run dev:web
+```
 
 ## Origin Context
 

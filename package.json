@@ -9,7 +9,12 @@
   "scripts": {
     "test": "vitest run",
     "build": "tsc -p tsconfig.json",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:core": "tsc -p tsconfig.json",
+    "build:contracts": "npm run build -w contracts",
+    "build:web": "npm run build -w @fission/web",
+    "dev:web": "npm run dev -w @fission/web",
+    "test:contracts": "npm run test -w contracts"
   },
   "repository": {
     "type": "git",
@@ -24,6 +29,10 @@
   },
   "homepage": "https://github.com/chris-in-the-shell/Fission#readme",
   "private": true,
+  "workspaces": [
+    "contracts",
+    "apps/*"
+  ],
   "dependencies": {
     "zod": "^4.3.6"
   },
