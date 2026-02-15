@@ -9,3 +9,4 @@ contracts/artifacts/
 contracts/cache/
 contracts/typechain-types/
 apps/web/dist/
+*.tsbuildinfo
