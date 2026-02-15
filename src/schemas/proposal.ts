@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 const isoDate = z
   .string()
+  // Accept ISO-like date strings while rejecting invalid date payloads early.
   .refine((value) => !Number.isNaN(Date.parse(value)), 'Invalid date string');
 
 const nonEmptyString = z.string().trim().min(1);

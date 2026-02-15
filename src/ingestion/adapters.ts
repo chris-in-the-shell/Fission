@@ -24,6 +24,7 @@ interface JsonPayloadInput {
 
 function ensureHttpUrl(url: string): string {
   const parsed = new URL(url);
+  // Restrict to web protocols so downstream crawlers and link validators behave consistently.
   if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
     throw new Error('Forum URL must use http or https.');
   }
@@ -32,6 +33,7 @@ function ensureHttpUrl(url: string): string {
 }
 
 function extractMarkdownTitle(markdown: string): string | undefined {
+  // Use the first level-1 heading as the canonical title fallback.
   const firstHeading = markdown
     .split('\n')
     .map((line) => line.trim())
@@ -91,6 +93,7 @@ export function ingestFromJsonPayload(input: JsonPayloadInput): Proposal {
   }
 
   const candidate = parsed as Record<string, unknown>;
+  // Build a stable fallback ID so payload-only proposals still produce deterministic source metadata.
   const fallbackId = String(candidate.proposalId ?? candidate.id ?? 'payload-proposal');
 
   return validateProposal({
