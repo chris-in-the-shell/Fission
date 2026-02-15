@@ -1,0 +1,35 @@
+{
+  "name": "fission",
+  "version": "1.0.0",
+  "description": "Fission is a product initiative by **Arkenstone Labs**.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.json",
+    "test:watch": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-in-the-shell/Fission.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/chris-in-the-shell/Fission/issues"
+  },
+  "homepage": "https://github.com/chris-in-the-shell/Fission#readme",
+  "private": true,
+  "dependencies": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
